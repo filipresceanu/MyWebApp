@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface IItemRepository extends JpaRepository<Item,Integer> {
     Optional<Item> findByName(String name);
-
+    Item getByid(Integer id);
 }

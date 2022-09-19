@@ -12,6 +12,7 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+    @Lob
     private byte[] imageTo_display;
     private Long price;
     @ManyToOne

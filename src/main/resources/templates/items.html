@@ -32,7 +32,7 @@
                        <td>[[${item.id}]]</td>
                        <td>[[${item.name}]]</td>
                        <td>[[${item.price}]]</td>
-                       <td>    <img class="s-ava-alone-img" width="150" height="150" th:src="@{${item.imageTo_display}}"></td>
+                       <td>    <img class="s-ava-alone-img" width="150" height="150" th:src="@{/image/edit/{id}(id=${item.id})}"></td>
                    </tr>
                    <td>
                        <a class="h4 mr-3" th:href="@{'/users/edit/'+${item.id}}">Edit</a>
