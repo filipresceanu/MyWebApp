@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Items</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"/>
+</head>
+<body>
+   <div class="container-fluid text-center">
+       <h2>Items</h2>
+       <div class="m-2">
+           <a class="h3" th:href="@{/items/new}">Add New Item</a>
+       </div>
+       <div th:if="${message}" class="alert alert-success text-center">
+           [[${message}]]
+       </div>
+
+       <div>
+           <table class="table table-bordered">
+               <thead class="table-dark">
+               <tr>
+                   <th>ID</th>
+                   <th>Name</th>
+                   <th>Price</th>
+                   <th>Image</th>
+                   <th></th>
+               </tr>
+               </thead>
+               <tbody>
+               <th:block th:each="item:${listItems}">
+                   <tr>
+                       <td>[[${item.id}]]</td>
+                       <td>[[${item.name}]]</td>
+                       <td>[[${item.price}]]</td>
+                       <td>    <img class="s-ava-alone-img" width="150" height="150" th:src="@{${item.imageTo_display}}"></td>
+                   </tr>
+                   <td>
+                       <a class="h4 mr-3" th:href="@{'/users/edit/'+${item.id}}">Edit</a>
+                       <a class="h4 mr-3" th:href="@{'/users/delete/' +${item.id}}">Delete</a>
+                   </td>
+               </th:block>
+               </tbody>
+           </table>
+       </div>
+   </div>
+
+</body>
+</html>
