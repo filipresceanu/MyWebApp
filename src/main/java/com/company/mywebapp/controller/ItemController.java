@@ -35,7 +35,7 @@ public class ItemController {
     {
         List<Item> listitems=itemService.listAll();
         model.addAttribute("listItems",listitems);
-        model.addAttribute("imageUtl",new ImageUtil());
+
         return "items";
     }
     @GetMapping(value = "/image/{id}")
